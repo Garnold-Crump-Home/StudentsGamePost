@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Games</h1>
+        <h3>Enter your login credentials</h3>
+
+        <form id="loginForm">
+            <label for="first">Email:</label>
+            <input type="email" id="first" name="email" placeholder="Enter your Email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+
+            <div class="wrap">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <div id="message" role="status" aria-live="polite" style="margin-top:10px;color:red;"></div>
+
+        <p>Not registered?
+            <a href="createaccount.html" style="text-decoration: none;">
+                Create an account
+            </a>
+        </p>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'https://localhost:7091/api/users';
+
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const msg = document.getElementById('message');
+            msg.textContent = '';
+            msg.style.color = 'red';
+
+            const email = document.getElementById('first').value.trim();
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                msg.textContent = 'Please enter both email and password.';
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API_BASE_URL}/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (!res.ok) {
+                    const errorText = await res.text();
+                    throw new Error(errorText || 'Login failed.');
+                }
+
+                const user = await res.json();
+                msg.style.color = 'green';
+                msg.textContent = 'Login successful! Redirecting...';
+
+                // Optionally save login state
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
+
+                // Redirect to user page (adjust this to your app)
+                setTimeout(() => {
+                    window.location.href = 'userpage.html';
+                }, 1000);
+            } catch (err) {
+                msg.textContent = err.message;
+            }
+        });
+    </script>
+</body>
+
+</html>

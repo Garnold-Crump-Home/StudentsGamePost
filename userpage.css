@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #92c83e;
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    color: black;
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+    
+}
+
+.alignText {
+    text-align: center;
+}
+
+.addGames {
+    border-style: solid;
+    text-align: center;
+    font-size: 65px;
+    float: left;
+    margin-left: 2%;
+    border-radius: 10px;
+    padding: 20px 40px;
+
+}
+.addGames:hover{
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    border-color: #181818;  
+    margin-top: 2px;
+}
+
+/* Modal styles for add game form */
+.modal {
+    display: none;
+    /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 480px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+#imagePreview {
+    max-width: 100%;
+    max-height: 180px;
+    display: block;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Games container and items (thumbnails next to the Add button) */
+.games-container {
+  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-start;
+    margin-left: 12px;
+}
+
+.game-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    padding: 6px;
+    border: 1px solid transparent;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.game-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    border-color: #eee;
+    margin-top: 2px;
+}
+
+.game-thumb {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.game-label {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+    word-break: break-word;
+}
+
+.game-user {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+/* Wrapper for a game item plus actions */
+.game-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.action-btn {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: #f0f0f0
+}
+
+.delete-btn {
+    border-color: #e0b4b4;
+    color: #000000;
+    background-color: red;
+    
+}
+
+.edit-btn {
+    border-color: #b4d0e0;
+    color: black;
+    background-color: #00b445;
+}
+
+footer{
+position: fixed; /* Fixes the element relative to the viewport */
+    bottom: 0;       /* Positions it at the bottom of the viewport */
+    left: 0;         /* Aligns it to the left edge */
+    width: 100%;     /* Ensures it spans the full width of the screen */
+    background-color: #92c83e; /* Example background color */
+    color: white;      /* Example text color */
+    text-align: center; /* Centers the content */
+    padding: 10px 0; /* Add some padding inside */
+    height: 30px;    /* Define a fixed height for consistency */
+    z-index: 1000;   /* Ensures it stays on top of other elements */
+}
