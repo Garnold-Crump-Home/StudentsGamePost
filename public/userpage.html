@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Students Games</title>
+    <link rel="stylesheet" href="userpage.css">
+</head>
+
+<body>
+    <header>
+        <h1>Student Games</h1>
+        <div id="userWelcome" class="user-welcome"></div>
+    </header>
+    
+    <div class="white-area">
+        <div class="alignText">
+            <h2>Add your own game</h2>
+            <p>Description: Click the plus symbol to add a game</p>
+        </div>
+
+        <button id="addGameBtn" class="addGames" type="button" aria-label="Add game">+</button>
+
+        <div id="gamesContainer" class="games-container" aria-live="polite"></div>
+    </div>
+
+    <div id="addGameModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button id="closeModal" class="modal-close" aria-label="Close">+</button>
+            <h3 id="modalTitle">Add a Game</h3>
+          <form id="gameForm" enctype="multipart/form-data">
+    <label>
+        Game name
+        <input type="text" name="gamename" id="gamename" required placeholder="Enter game name">
+    </label>
+
+    <label>
+        Game image
+        <input type="file" name="image" id="gameimage" accept="image/*">
+    </label>
+
+    <div id="imagePreviewContainer" style="display:none">
+        <p>Image preview:</p>
+        <img id="imagePreview" alt="Game image preview" />
+    </div>
+
+    <label>
+        Game file
+        <input type="file" name="file" id="gamefile" accept=".zip,.rar,.7z,.exe,.js,.html,.wasm" required>
+    </label>
+
+    <div class="modal-actions">
+        <button type="submit" id="saveGame">Save</button>
+        <button type="button" id="cancelGame">Cancel</button>
+    </div>
+</form>
+
+
+    <script src="userpage.js"></script>
+  
+</body>
+<footer>
+    
+</footer>
+  
+</html>
