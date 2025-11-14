@@ -1,5 +1,6 @@
 ﻿using AccountsManager.Data;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
 
@@ -48,13 +49,23 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
         Path.Combine(builder.Environment.WebRootPath, "GameBuilds")),
-    RequestPath = "/GameBuilds"
+    RequestPath = "/GameBuilds",
+    ServeUnknownFileTypes = true, // <-- required for Unity files
+    ContentTypeProvider = new FileExtensionContentTypeProvider(
+        new Dictionary<string, string>
+        {
+            { ".data", "application/octet-stream" },
+            { ".wasm", "application/wasm" },
+            { ".framework.js", "application/javascript" },
+            { ".loader.js", "application/javascript" }
+        }
+    )
 });
+
 
 
 
