@@ -37,35 +37,41 @@ namespace AccountsManager.Controllers
 
 
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllGames()
         {
             try
             {
-                using SqlConnection conn = await _sql.GetOpenConnectionAsync();
-                using var cmd = new SqlCommand("SELECT GameID, GameCreationDate, GameName, PlayersViews FROM games;", conn);
-                using var reader = await cmd.ExecuteReaderAsync();
+                using var conn = await _sql.GetOpenConnectionAsync();
+                using var cmd = new SqlCommand(@"
+            SELECT GameName, PlayersViews, uploads
+            FROM games
+            ORDER BY ISNULL(PlayersViews, 0) DESC;
+        ", conn);
 
-                var list = new List<games>();
+                var reader = await cmd.ExecuteReaderAsync();
+                var games = new List<object>();
+
                 while (await reader.ReadAsync())
                 {
-                    list.Add(new games
+                    games.Add(new
                     {
-                        GameID = reader.GetInt32(0),
-                        GameCreationDate = reader.IsDBNull(1) ? DateTime.UtcNow : reader.GetDateTime(1),
-                        GameName = reader.IsDBNull(2) ? string.Empty : reader.GetString(2),
-                        PlayersViews = reader.IsDBNull(3) ? 0 : reader.GetInt32(3)
+                        name = reader["GameName"].ToString(),
+                        playersViews = Convert.ToInt32(reader["PlayersViews"]),
+                        uploads = reader["uploads"].ToString()
                     });
                 }
 
-                return Ok(list);
+                return Ok(games);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error fetching games: " + ex.Message);
-                return StatusCode(500, "Internal server error while fetching games.");
+                return StatusCode(500, new { message = "Internal server error." });
             }
         }
+
+
         [HttpDelete("{gameName}")]
         public async Task<IActionResult> Delete([FromRoute] string gameName)
         {
@@ -88,7 +94,7 @@ namespace AccountsManager.Controllers
                 folderName = (string)result;
             }
 
-            var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "GameBuilds", folderName);
+            var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot","GameBuilds", folderName);
             if (Directory.Exists(folderPath))
                 Directory.Delete(folderPath, true);
 
@@ -99,10 +105,80 @@ namespace AccountsManager.Controllers
 
             return Ok(new { message = "Game deleted successfully." });
         }
+        [HttpPatch("{gameName}/incrementViews")]
+        public async Task<IActionResult> IncrementViews([FromRoute] string gameName)
+        {
+            if (string.IsNullOrWhiteSpace(gameName))
+                return BadRequest(new { message = "Game name is required." });
+
+            gameName = Uri.UnescapeDataString(gameName).Trim();
+
+            try
+            {
+                using var conn = await _sql.GetOpenConnectionAsync();
+
+                // Increment PlayersViews atomically
+                using var cmd = new SqlCommand(@"
+            UPDATE games
+            SET PlayersViews = ISNULL(PlayersViews, 0) + 1
+            WHERE LTRIM(RTRIM(GameName))=@name COLLATE SQL_Latin1_General_CP1_CI_AS;
+            SELECT PlayersViews FROM games WHERE LTRIM(RTRIM(GameName))=@name COLLATE SQL_Latin1_General_CP1_CI_AS;
+        ", conn);
+
+                cmd.Parameters.AddWithValue("@name", gameName);
+
+                var result = await cmd.ExecuteScalarAsync();
+                if (result == null || result == DBNull.Value)
+                    return NotFound(new { message = "Game not found." });
+
+                int updatedViews = Convert.ToInt32(result);
+
+                return Ok(new { playersViews = updatedViews });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error incrementing views: " + ex.Message);
+                return StatusCode(500, new { message = "Internal server error while incrementing views." });
+            }
+        }
+        [HttpGet("{gameName}/getViews")]
+        public async Task<IActionResult> GetViews([FromRoute] string gameName)
+        {
+            if (string.IsNullOrWhiteSpace(gameName))
+                return BadRequest(new { message = "Game name is required." });
+
+            gameName = Uri.UnescapeDataString(gameName).Trim();
+
+            try
+            {
+                using var conn = await _sql.GetOpenConnectionAsync();
+                using var cmd = new SqlCommand(@"
+            SELECT PlayersViews FROM games 
+            WHERE LTRIM(RTRIM(GameName))=@name COLLATE SQL_Latin1_General_CP1_CI_AS;
+        ", conn);
+
+                cmd.Parameters.AddWithValue("@name", gameName);
+
+                var result = await cmd.ExecuteScalarAsync();
+                if (result == null || result == DBNull.Value)
+                    return NotFound(new { message = "Game not found." });
+
+                int views = Convert.ToInt32(result);
+                return Ok(new { playersViews = views });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error fetching views: " + ex.Message);
+                return StatusCode(500, new { message = "Internal server error while fetching views." });
+            }
+        }
 
 
         [HttpPost("upload")]
-        public async Task<IActionResult> Upload([FromForm] IFormFile gamefile, [FromForm] string gamename)
+        public async Task<IActionResult> Upload(
+    [FromForm] IFormFile gamefile,
+    [FromForm] IFormFile gameimage,
+    [FromForm] string gamename)
         {
             if (string.IsNullOrEmpty(gamename))
                 return BadRequest(new { error = "Game name is required" });
@@ -113,24 +189,36 @@ namespace AccountsManager.Controllers
             if (!gamefile.FileName.EndsWith(".zip", StringComparison.OrdinalIgnoreCase))
                 return BadRequest(new { error = "Only .zip files are supported" });
 
+            // ✔ Game ID folder
             var gameId = Guid.NewGuid().ToString("N");
             var gameFolder = Path.Combine(_env.WebRootPath, "GameBuilds", gameId);
             Directory.CreateDirectory(gameFolder);
 
+            // ---------------------------- //
+            // 1️⃣ Save the ZIP file safely
+            // ---------------------------- //
+
             var tempZipPath = Path.Combine(gameFolder, gamefile.FileName);
 
-            // ✅ Save ZIP safely and ensure it’s fully closed
             await using (var stream = new FileStream(tempZipPath, FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 await gamefile.CopyToAsync(stream);
             }
 
-            // Small safeguard delay to ensure handle release (optional but safe)
             await Task.Delay(100);
 
             try
             {
-                // ✅ Open ZIP in Read mode to avoid file lock issues
+                using SqlConnection conn = await _sql.GetOpenConnectionAsync();
+                string insertSql = @"
+            INSERT INTO games (GameName, GameCreationDate, PlayersViews, uploads)
+            VALUES (@name, GETUTCDATE(), 0, @folder);
+        ";
+                using var cmd = new SqlCommand(insertSql, conn);
+                cmd.Parameters.AddWithValue("@name", gamename);
+                cmd.Parameters.AddWithValue("@folder", gameId); // store folder name
+                await cmd.ExecuteNonQueryAsync();
+
                 using (var zipStream = new FileStream(tempZipPath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 using (var archive = new ZipArchive(zipStream, ZipArchiveMode.Read))
                 {
@@ -144,12 +232,38 @@ namespace AccountsManager.Controllers
                 return BadRequest(new { error = "Failed to unzip game build: " + ex.Message });
             }
 
-            // Locate index.html
+            // ---------------------------- //
+            // 2️⃣ Save optional game image
+            // ---------------------------- //
+            string gameImageUrl = null;
+
+            if (gameimage != null && gameimage.Length > 0)
+            {
+                // Validate img type
+                var validTypes = new[] { ".png", ".jpg", ".jpeg", ".webp" };
+                var ext = Path.GetExtension(gameimage.FileName).ToLower();
+
+                if (!validTypes.Contains(ext))
+                    return BadRequest(new { error = "Game image must be PNG, JPG, JPEG, or WEBP" });
+
+                var imagePath = Path.Combine(gameFolder, "gameimage" + ext);
+
+                await using (var imgStream = new FileStream(imagePath, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    await gameimage.CopyToAsync(imgStream);
+                }
+
+                gameImageUrl =
+                    $"{Request.Scheme}://{Request.Host}/GameBuilds/{gameId}/gameimage{ext}";
+            }
+
+           
+
             var indexPath = Directory.GetFiles(gameFolder, "index.html", SearchOption.AllDirectories).FirstOrDefault();
             if (indexPath == null)
                 return BadRequest(new { error = "index.html not found" });
 
-            // ✅ Flatten nested Build folders
+            // Flatten nested Build folders (Unity bug prevention)
             var buildDirs = Directory.GetDirectories(gameFolder, "Build", SearchOption.AllDirectories);
             foreach (var dir in buildDirs)
             {
@@ -167,7 +281,7 @@ namespace AccountsManager.Controllers
                 }
             }
 
-            // ✅ Fix Unity HTML paths
+          
             try
             {
                 string html = await System.IO.File.ReadAllTextAsync(indexPath);
@@ -181,16 +295,19 @@ namespace AccountsManager.Controllers
                 return BadRequest(new { error = "Failed to fix index.html paths: " + ex.Message });
             }
 
-            // Return final URL
+           
+
             var relativePath = indexPath.Substring(_env.WebRootPath.Length).Replace("\\", "/");
             var gameUrl = $"{Request.Scheme}://{Request.Host}{relativePath}";
 
             return Ok(new
             {
                 gameId = gameId,
-                gameUrl = gameUrl
+                gameUrl = gameUrl,
+                gameImageUrl = gameImageUrl
             });
         }
+
 
 
 
