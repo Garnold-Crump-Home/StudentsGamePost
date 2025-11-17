@@ -65,13 +65,34 @@ imageInput.addEventListener('change', () => {
 // Render games
 // ----------------------
 async function renderGames() {
-
-
     const container = document.getElementById('gamesContainer');
     container.innerHTML = '';
 
-    const existing = JSON.parse(localStorage.getItem('games') || '[]');
+    let existing = JSON.parse(localStorage.getItem('games') || '[]');
 
+    // Fetch latest views for all games
+    await Promise.all(existing.map(async (record) => {
+        try {
+            const res = await fetch(`${API_BASE_URL}/${record.name}/getViews`);
+            if (res.ok) {
+                const data = await res.json();
+                record.playersViews = data.playersViews;
+            } else {
+                record.playersViews = record.playersViews || 0;
+            }
+        } catch (err) {
+            console.error('Error fetching views for', record.name, err);
+            record.playersViews = record.playersViews || 0;
+        }
+    }));
+
+    // Sort games by views descending
+    existing.sort((a, b) => (b.playersViews || 0) - (a.playersViews || 0));
+
+    // Save updated views to localStorage (optional)
+    localStorage.setItem('games', JSON.stringify(existing));
+
+    // Render each game
     existing.forEach(record => {
         const wrap = document.createElement('div');
         wrap.className = 'game-wrap';
@@ -88,41 +109,38 @@ async function renderGames() {
         const label = document.createElement('div');
         label.className = 'game-label';
         label.innerHTML = `${record.name} 
-    ${record.username ? `(by ${record.username})` : ''} 
-    <span class="game-views">[Views: ${record.playersViews || 0}]</span>`;
-
+            ${record.username ? `(by ${record.username})` : ''} 
+            <span class="game-views">[Views: ${record.playersViews || 0}]</span>`;
 
         btn.appendChild(img);
         btn.appendChild(label);
 
+        // Increment views on click
         btn.addEventListener('click', async () => {
-            if (record.gameUrl) {
-                try {
-                    const res = await fetch(`${API_BASE_URL}/${record.name}/incrementViews`, {
-                        method: 'PATCH'
-                    });
-
-                    if (!res.ok) throw new Error('Failed to increment views');
-
-                    // Update local record and UI
-                    record.playersViews = (record.playersViews || 0) + 1;
-                    const viewSpan = btn.querySelector('.game-views');
-                    if (viewSpan) viewSpan.textContent = `[Views: ${record.playersViews}]`;
-
-                } catch (err) {
-                    console.error('Error incrementing views', err);
-                }
-
-                const win = window.open(record.gameUrl);
-                if (!win) alert('Popup blocked. Allow popups to view the game.');
-            } else {
+            if (!record.gameUrl) {
                 alert('No WebGL build associated with this game.');
+                return;
             }
+
+            try {
+                const res = await fetch(`${API_BASE_URL}/${record.name}/incrementViews`, { method: 'PATCH' });
+                const data = await res.json();
+                record.playersViews = data.playersViews;
+                label.querySelector('.game-views').textContent = `[Views: ${record.playersViews}]`;
+
+                // Re-sort list after increment
+                renderGames();
+            } catch (err) {
+                console.error('Error incrementing views', err);
+            }
+
+            const win = window.open(record.gameUrl);
+            if (!win) alert('Popup blocked. Allow popups to view the game.');
         });
 
         wrap.appendChild(btn);
 
-        // ---------- DELETE BUTTON (only for owner) ----------
+        // Delete button logic (same as before)
         if (record.username === currentUsername) {
             const deleteBtn = document.createElement('button');
             deleteBtn.className = 'delete-btn';
@@ -130,26 +148,22 @@ async function renderGames() {
             deleteBtn.style.marginLeft = '8px';
 
             deleteBtn.addEventListener('click', async (e) => {
-                e.stopPropagation(); // prevent opening the game
+                e.stopPropagation();
                 if (!confirm(`Delete "${record.name}"? This cannot be undone.`)) return;
 
                 try {
-                    // DELETE by game name
                     const res = await fetch(`${API_BASE_URL}/${encodeURIComponent(record.name)}`, {
                         method: 'DELETE',
                         headers: { 'Content-Type': 'application/json' }
                     });
-
 
                     if (!res.ok) {
                         const data = await res.json();
                         throw new Error(data.message || 'Delete failed');
                     }
 
-                    // Remove from localStorage
-                    const existing = JSON.parse(localStorage.getItem('games') || '[]');
-                    const updated = existing.filter(g => g.name !== record.name);
-                    localStorage.setItem('games', JSON.stringify(updated));
+                    existing = existing.filter(g => g.name !== record.name);
+                    localStorage.setItem('games', JSON.stringify(existing));
 
                     renderGames();
                     alert('Game deleted successfully!');
@@ -162,10 +176,11 @@ async function renderGames() {
             wrap.appendChild(deleteBtn);
         }
 
-
         container.appendChild(wrap);
     });
 }
+
+
 
 // ----------------------
 // Form submit
@@ -184,7 +199,7 @@ form.addEventListener('submit', async (e) => {
     const formData = new FormData();
     formData.append('gamefile', gameFile);
     formData.append('gamename', gamename);
-    if (imageFile) formData.append('gameImage', imageFile);
+    if (imageFile) formData.append('gameimage', imageFile); // <-- FIXED
 
     try {
         const res = await fetch(`${API_BASE_URL}/upload`, {
@@ -204,17 +219,15 @@ form.addEventListener('submit', async (e) => {
             finalGameUrl += 'index.html';
         }
 
-        // Save locally for display
         const existing = JSON.parse(localStorage.getItem('games') || '[]');
 
         const newGame = {
             id: result.gameId,
             name: gamename,
             gameUrl: finalGameUrl,
-            imageDataUrl: result.imageUrl,
-            username: currentUsername // <--- Add this
+            imageDataUrl: result.gameImageUrl, // <-- FIXED
+            username: currentUsername
         };
-
 
         existing.push(newGame);
         localStorage.setItem('games', JSON.stringify(existing));
