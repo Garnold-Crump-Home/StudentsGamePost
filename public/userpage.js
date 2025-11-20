@@ -1,6 +1,6 @@
 const API_BASE_URL = (() => {
     const host = window.location.hostname;
-    const port = 7263;
+    const port = 7239;
     if (host.includes('githubpreview.dev')) {
         return `https://${port}-${host}/api/games`;
     }

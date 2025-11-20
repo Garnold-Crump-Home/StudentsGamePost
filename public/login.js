@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://localhost:7263/api/users';
+const API_BASE_URL = 'http://localhost:7239/api/users';
 let currentUsername = null; // store logged-in username globally
 
 async function signIn(email, password) {
