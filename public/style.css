@@ -6,9 +6,10 @@ body {
     font-family: sans-serif;
     line-height: 1.5;
     min-height: 100vh;
-    background: #f3f3f3;
+    background-color: rgb(97, 97, 97);
     flex-direction: column;
     margin: 0;
+   
 }
 
 .main {
@@ -22,7 +23,7 @@ body {
 }
 
 h1 {
-    color: #4d8b88;
+    color:   #92c83e;
 }
 
 label {
@@ -53,7 +54,7 @@ button {
     border: none;
     color: white;
     cursor: pointer;
-    background-color: #4c5eaf;
+    background-color:  #92c83e;
     width: 100%;
     font-size: 16px;
 }

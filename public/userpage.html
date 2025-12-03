@@ -12,13 +12,15 @@
         <div id="userWelcome" class="user-welcome"></div>
     </header>
     
-    <div class="white-area">
+    
         <div class="alignText">
             <h2>Add your own game</h2>
-            <p>Description: Click the plus symbol to add a game</p>
+             <button id="addGameBtn" class="addGames" type="button" aria-label="Add game"><div class = "addGamePlus">+</div></button>
+            <p style="margin-right:100px;">Description: Click the plus symbol to add a game</p><br><br>
+            
         </div>
 
-        <button id="addGameBtn" class="addGames" type="button" aria-label="Add game">+</button>
+       
 
         <div id="gamesContainer" class="games-container" aria-live="polite"></div>
     </div>
@@ -51,15 +53,15 @@
     <div class="modal-actions">
         <button type="submit" id="saveGame">Save</button>
         <button type="button" id="cancelGame">Cancel</button>
-    </div>
-</form>
+    </div> </footer>
+</form> 
 
 
     <script src="userpage.js"></script>
   
 </body>
-<footer>
+
     
-</footer>
+
   
 </html>

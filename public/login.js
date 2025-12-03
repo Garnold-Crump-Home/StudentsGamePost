@@ -1,13 +1,13 @@
-const API_BASE_URL = 'http://localhost:7239/api/users';
+const API_BASE_URL = '/api/users';
 let currentUsername = null; // store logged-in username globally
 
 async function signIn(email, password) {
     try {
-        const res = await fetch(`${API_BASE_URL}/login`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
-        });
+        fetch(`${API_BASE_URL}/login`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email, password })
+});
 
         if (!res.ok) {
             const msg = await res.text();

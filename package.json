@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "login.js",
-  "type": "module",           
-    "scripts": {
+  "type": "module",
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -14,9 +14,11 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.927.0",
     "@aws-sdk/s3-request-presigner": "^3.927.0",
+    "connect-history-api-fallback": "^2.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "get-port": "^7.1.0",
     "http-proxy-middleware": "^3.0.5",
     "multer": "^2.0.2",
     "unzipper": "^0.12.3"
