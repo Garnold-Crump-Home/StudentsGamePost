@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"ContentRoots":["C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\wwwroot\\"],"Root":{"Children":{"GameBuilds":{"Children":{".gitignore":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"GameBuilds/.gitignore"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+=======
+{"ContentRoots":["/workspaces/StudentsGamePost/AccountsManager/AccountsManager/wwwroot/"],"Root":{"Children":{"GameBuilds":{"Children":{".gitignore":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"GameBuilds/.gitignore"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+>>>>>>> 040a20ec2a8d8c7893544e4aeed591315097272d
