@@ -1,10 +1,10 @@
 const API_BASE_URL = (() => {
     const host = window.location.hostname;
-    const port = 7263;
+    const port = 7239;
     if (host.includes('githubpreview.dev')) {
-        return `https://${port}-${host}/api/games`;
+        return `http://localhost:7239/api/games`;
     }
-    return `https://localhost:${port}/api/games`;
+    return `http://localhost:7239/api/games`;
 })();
 
 const addBtn = document.getElementById('addGameBtn');
@@ -13,7 +13,6 @@ const closeModal = document.getElementById('closeModal');
 const cancelBtn = document.getElementById('cancelGame');
 let editingId = null;
 
-// Ensure user is logged in
 const loggedUser = JSON.parse(localStorage.getItem('loggedInUser') || 'null');
 if (!loggedUser) {
     alert('You must be logged in to view this page. Redirecting to login.');
@@ -22,9 +21,7 @@ if (!loggedUser) {
 const currentUsername = loggedUser.username || loggedUser.Email || loggedUser.name;
 document.getElementById('userWelcome').textContent = currentUsername ? `Logged in as: ${currentUsername}` : '';
 
-// ----------------------
-// Modal functions
-// ----------------------
+
 function openModal() {
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
@@ -44,9 +41,7 @@ closeModal.addEventListener('click', hideModal);
 cancelBtn.addEventListener('click', hideModal);
 window.addEventListener('click', e => { if (e.target === modal) hideModal(); });
 
-// ----------------------
-// Image preview
-// ----------------------
+
 const imageInput = document.getElementById('gameimage');
 const imgPreview = document.getElementById('imagePreview');
 const imgPreviewContainer = document.getElementById('imagePreviewContainer');
@@ -61,9 +56,7 @@ imageInput.addEventListener('change', () => {
     imgPreviewContainer.style.display = 'block';
 });
 
-// ----------------------
-// Render games
-// ----------------------
+
 async function renderGames() {
     const container = document.getElementById('gamesContainer');
     container.innerHTML = '';
@@ -86,13 +79,13 @@ async function renderGames() {
         }
     }));
 
-    // Sort games by views descending
+    
     existing.sort((a, b) => (b.playersViews || 0) - (a.playersViews || 0));
 
-    // Save updated views to localStorage (optional)
+    
     localStorage.setItem('games', JSON.stringify(existing));
 
-    // Render each game
+   
     existing.forEach(record => {
         const wrap = document.createElement('div');
         wrap.className = 'game-wrap';
@@ -182,9 +175,7 @@ async function renderGames() {
 
 
 
-// ----------------------
-// Form submit
-// ----------------------
+
 const form = document.getElementById('gameForm');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -199,7 +190,7 @@ form.addEventListener('submit', async (e) => {
     const formData = new FormData();
     formData.append('gamefile', gameFile);
     formData.append('gamename', gamename);
-    if (imageFile) formData.append('gameimage', imageFile); // <-- FIXED
+    if (imageFile) formData.append('gameimage', imageFile); 
 
     try {
         const res = await fetch(`${API_BASE_URL}/upload`, {
@@ -225,7 +216,7 @@ form.addEventListener('submit', async (e) => {
             id: result.gameId,
             name: gamename,
             gameUrl: finalGameUrl,
-            imageDataUrl: result.gameImageUrl, // <-- FIXED
+            imageDataUrl: result.gameImageUrl, 
             username: currentUsername
         };
 
@@ -241,5 +232,5 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
-// Initial render
+
 renderGames();

@@ -19,15 +19,24 @@ if (!Directory.Exists(gameBuildsPath))
 var builder = WebApplication.CreateBuilder(args);
 
 // -------------------------------
+// Configure Kestrel and ports
+// -------------------------------
+// Use HTTP port 5000 in development (Codespaces-friendly)
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.Limits.MaxRequestBodySize = 500_000_000; // 500 MB
+    options.ListenAnyIP(5000); // HTTP for dev
+    // Uncomment below for production HTTPS
+    // options.ListenAnyIP(7239, listenOptions => listenOptions.UseHttps());
+});
+
+// -------------------------------
 // Services
 // -------------------------------
 builder.Services.AddControllers();
 builder.Services.AddScoped<Sql>();
 
-builder.WebHost.ConfigureKestrel(options =>
-{
-    options.Limits.MaxRequestBodySize = 500_000_000; // 500 MB
-});
+// Limit form body for large file uploads
 builder.Services.Configure<FormOptions>(options =>
 {
     options.MultipartBodyLengthLimit = 500_000_000; // 500 MB
@@ -85,9 +94,14 @@ app.UseStaticFiles(new StaticFileOptions
 
 // Middleware
 app.UseCors("AllowAll");
-app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
+
+// Only redirect to HTTPS in production
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 // Map controllers
 app.MapControllers();
@@ -96,7 +110,6 @@ app.MapControllers();
 // Run
 // -------------------------------
 app.Run();
-
 
 // -------------------------------
 // Swagger OperationFilter for IFormFile uploads

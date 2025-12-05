@@ -2034,32 +2034,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gacr846\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
       "projectName": "AccountsManager",
       "projectPath": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
       "packagesPath": "C:\\Users\\gacr846\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\obj\\",
+=======
+      "projectUniqueName": "/workspaces/StudentsGamePost/AccountsManager/AccountsManager/AccountsManager.csproj",
+      "projectName": "AccountsManager",
+      "projectPath": "/workspaces/StudentsGamePost/AccountsManager/AccountsManager/AccountsManager.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/StudentsGamePost/AccountsManager/AccountsManager/obj/",
+>>>>>>> 040a20ec2a8d8c7893544e4aeed591315097272d
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\gacr846\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2077,8 +2077,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -2112,7 +2111,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

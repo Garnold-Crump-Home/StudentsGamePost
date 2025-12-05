@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://localhost:7263/api/users';
+const API_BASE_URL = 'http://localhost:7239/api/users';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,7 +23,7 @@ async function createAccount(form) {
 
     const payload = { Username: username, email, password };
 
-    const res = await fetch(API_BASE_URL, {
+   fetch("/api/users", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -33,4 +33,4 @@ async function createAccount(form) {
 
     displayResult(`Account created! Username: ${username}, Email: ${email}, Password: ${password}`);
     form.reset();
-}
+} 
