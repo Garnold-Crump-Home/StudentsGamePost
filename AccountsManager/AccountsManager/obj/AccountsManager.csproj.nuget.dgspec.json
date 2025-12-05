@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\AccountsManager.csproj": {}
+    "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\AccountsManager.csproj": {
+    "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
+        "projectUniqueName": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
         "projectName": "AccountsManager",
-        "projectPath": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
+        "projectPath": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
         "packagesPath": "C:\\Users\\gacr846\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\obj\\",
+        "outputPath": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

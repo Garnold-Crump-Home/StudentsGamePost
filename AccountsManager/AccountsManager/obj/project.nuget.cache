@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tvV4Q24GmdI=",
+  "dgSpecHash": "fh3I9uz/Po0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
+  "projectFilePath": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gacr846\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\gacr846\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
