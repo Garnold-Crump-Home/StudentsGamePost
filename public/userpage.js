@@ -2,9 +2,9 @@ const API_BASE_URL = (() => {
     const host = window.location.hostname;
     const port = 7239;
     if (host.includes('githubpreview.dev')) {
-        return `http://10.10.19.165:7239/api/games`;
+        return `http://localhost:7239/api/games`;
     }
-    return `http://10.10.19.165:7239/api/games`;
+    return `http://localhost:7239/api/games`;
 })();
 
 const addBtn = document.getElementById('addGameBtn');

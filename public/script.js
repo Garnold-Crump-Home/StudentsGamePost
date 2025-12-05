@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://10.10.19.165:7239/api/users';
+const API_BASE_URL = 'http://localhost:7239/api/users';
 
 
 document.addEventListener('DOMContentLoaded', () => {
