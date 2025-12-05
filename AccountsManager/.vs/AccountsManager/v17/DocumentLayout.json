@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\accountsmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -31,10 +35,6 @@
       "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\wwwroot\\gamebuilds\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\wwwroot\\gamebuilds\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\appsettings.json",
               "RelativeDocumentMoniker": "AccountsManager\\appsettings.json",
@@ -85,25 +85,27 @@
               "RelativeDocumentMoniker": "AccountsManager\\Program.cs",
               "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Program.cs",
               "RelativeToolTip": "AccountsManager\\Program.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAkwGEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAADwv3oAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:31:01.182Z"
+              "WhenOpened": "2025-11-19T14:31:01.182Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "gameController.cs",
               "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Controllers\\gameController.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Controllers\\gameController.cs",
               "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Controllers\\gameController.cs",
               "RelativeToolTip": "AccountsManager\\Controllers\\gameController.cs",
-              "ViewState": "AgIAACcBAAAAAAAAAAAmwD8BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQBAAAAAAAAAAAuwEIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:30:34.891Z"
+              "WhenOpened": "2025-11-19T14:30:34.891Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Controllers\\UserController.cs",
@@ -115,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Sql.cs",
               "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Data\\Sql.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Data\\Sql.cs",
@@ -127,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "games.cs",
               "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Models\\games.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Models\\games.cs",
@@ -139,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Models\\Users.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Models\\Users.cs",
@@ -151,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AccountsManager.csproj",
               "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
               "RelativeDocumentMoniker": "AccountsManager\\AccountsManager.csproj",
