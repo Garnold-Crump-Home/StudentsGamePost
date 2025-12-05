@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "/workspaces/StudentsGamePost/AccountsManager/AccountsManager/wwwroot/GameBuilds/.gitignore",
+      "PackagePath": "staticwebassets/GameBuilds/.gitignore"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.AccountsManager.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.AccountsManager.props",
+      "PackagePath": "build\\AccountsManager.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.AccountsManager.props",
+      "PackagePath": "buildMultiTargeting\\AccountsManager.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.AccountsManager.props",
+      "PackagePath": "buildTransitive\\AccountsManager.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

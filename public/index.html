@@ -67,10 +67,9 @@
                 msg.style.color = 'green';
                 msg.textContent = 'Login successful! Redirecting...';
 
-                // Optionally save login state
+               
                 localStorage.setItem('loggedInUser', JSON.stringify(user));
 
-                // Redirect to user page (adjust this to your app)
                 setTimeout(() => {
                     window.location.href = 'userpage.html';
                 }, 1000);
