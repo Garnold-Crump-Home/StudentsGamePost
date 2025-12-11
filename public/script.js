@@ -23,7 +23,7 @@ async function createAccount(form) {
 
     const payload = { Username: username, email, password };
 
-   fetch("/api/users", {
+    fetch("/api/users", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
