@@ -19,7 +19,7 @@ namespace AccountsManager.Controllers
             _sql = sql;
             _env = env;
 
-            // Folder for uploaded games
+         
             _gameBuildsFolder = Path.Combine(_env.WebRootPath ?? Directory.GetCurrentDirectory(), "GameBuilds");
             if (!Directory.Exists(_gameBuildsFolder))
             {
@@ -27,9 +27,7 @@ namespace AccountsManager.Controllers
             }
         }
 
-        // -------------------
-        // Get all games
-        // -------------------
+     
         [HttpGet("all")]
         public async Task<IActionResult> GetAllGames()
         {
@@ -64,9 +62,7 @@ namespace AccountsManager.Controllers
             }
         }
 
-        // -------------------
-        // Delete a game
-        // -------------------
+     
         [HttpDelete("{gameName}")]
         public async Task<IActionResult> Delete([FromRoute] string gameName)
         {
@@ -101,9 +97,7 @@ namespace AccountsManager.Controllers
             return Ok(new { message = "Game deleted successfully." });
         }
 
-        // -------------------
-        // Increment views
-        // -------------------
+      
         [HttpPatch("{gameName}/incrementViews")]
         public async Task<IActionResult> IncrementViews([FromRoute] string gameName)
         {
@@ -139,9 +133,7 @@ namespace AccountsManager.Controllers
             }
         }
 
-        // -------------------
-        // Get views
-        // -------------------
+    
         [HttpGet("{gameName}/getViews")]
         public async Task<IActionResult> GetViews([FromRoute] string gameName)
         {
@@ -174,9 +166,7 @@ namespace AccountsManager.Controllers
             }
         }
 
-        // -------------------
-        // Upload game (works with Swagger)
-        // -------------------
+       
         [ApiExplorerSettings(IgnoreApi = true)]
         [HttpPost("upload")]
         public async Task<IActionResult> Upload(
@@ -193,12 +183,12 @@ namespace AccountsManager.Controllers
             if (!gamefile.FileName.EndsWith(".zip", StringComparison.OrdinalIgnoreCase))
                 return BadRequest(new { error = "Only .zip files are supported." });
 
-            // Create unique folder for game
+          
             var gameId = Guid.NewGuid().ToString("N");
             var gameFolder = Path.Combine(_gameBuildsFolder, gameId);
             Directory.CreateDirectory(gameFolder);
 
-            // Save ZIP file temporarily
+          
             var tempZipPath = Path.Combine(gameFolder, gamefile.FileName);
 
             try
@@ -217,7 +207,7 @@ namespace AccountsManager.Controllers
                 return StatusCode(500, new { error = "Failed to save zip file: " + ex.Message });
             }
 
-            // Insert database row BEFORE unzipping
+          
             try
             {
                 using var conn = await _sql.GetOpenConnectionAsync();
@@ -235,13 +225,13 @@ namespace AccountsManager.Controllers
                 return StatusCode(500, new { error = "Database insert failed: " + ex.Message });
             }
 
-            // --- UNZIP SAFELY ---
+        
             try
             {
-                // Extract without opening your own FileStream
+                
                 ZipFile.ExtractToDirectory(tempZipPath, gameFolder, true);
 
-                // Ensure OS releases any locks
+           
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
 
@@ -252,7 +242,7 @@ namespace AccountsManager.Controllers
                 return BadRequest(new { error = "Failed to unzip game build: " + ex.Message });
             }
 
-            // --- OPTIONAL GAME IMAGE ---
+            
             string? gameImageUrl = null;
 
             if (gameimage != null && gameimage.Length > 0)
@@ -283,7 +273,7 @@ namespace AccountsManager.Controllers
                 gameImageUrl = $"{Request.Scheme}://{Request.Host}/GameBuilds/{gameId}/gameimage{ext}";
             }
 
-            // --- FIX UNITY index.html RELATIVE PATHS ---
+            
             var indexPath = Directory.GetFiles(gameFolder, "index.html", SearchOption.AllDirectories)
                                      .FirstOrDefault();
 
@@ -305,7 +295,7 @@ namespace AccountsManager.Controllers
                 return BadRequest(new { error = "Failed to rewrite index.html: " + ex.Message });
             }
 
-            // Final URL to play the game
+        
             var rootPath = _env.WebRootPath ?? Directory.GetCurrentDirectory();
             var relativePath = indexPath.Substring(rootPath.Length).Replace("\\", "/");
             var gameUrl = $"{Request.Scheme}://{Request.Host}{relativePath}";

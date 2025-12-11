@@ -27,7 +27,7 @@ builder.Services.Configure<FormOptions>(options =>
     options.MultipartBodyLengthLimit = 500_000_000;
 });
 
-// CORS
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -38,7 +38,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Swagger
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -46,21 +46,19 @@ builder.Services.AddSwaggerGen(c =>
     c.OperationFilter<SwaggerFileUploadOperationFilter>();
 });
 
-// -------------------------------
-// Build app
-// -------------------------------
+
 var app = builder.Build();
 
-// Development tools
+
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseHttpsRedirection(); // HTTPS only in dev
+    app.UseHttpsRedirection();
 }
 
-// Static files for Unity builds
+
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
@@ -78,7 +76,7 @@ app.UseStaticFiles(new StaticFileOptions
     )
 });
 
-// Middleware
+
 app.UseCors("AllowAll");
 app.UseRouting();
 app.UseAuthorization();

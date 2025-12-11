@@ -95,7 +95,7 @@ namespace AccountsManager.Controllers
             var email = reader.GetString(2);
             var passwordHash = reader.GetString(3);
 
-            // TODO: Replace with BCrypt or hashing check if you store hashed passwords
+           
             bool passwordMatches = passwordHash == request.Password;
 
             if (!passwordMatches)
@@ -112,7 +112,7 @@ namespace AccountsManager.Controllers
         }
     }
 
-    // ✅ DTO for login requests
+    
     public class LoginRequest
     {
         public string Email { get; set; }
