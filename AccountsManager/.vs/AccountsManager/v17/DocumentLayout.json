@@ -1,42 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\",
+  "WorkspaceRootPath": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\database-access-in-c-console-app-garnold-crump-student\\projects\\accountsmanager\\accountsmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\database-access-in-c-console-app-garnold-crump-student\\projects\\accountsmanager\\accountsmanager\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\database-access-in-c-console-app-garnold-crump-student\\projects\\accountsmanager\\accountsmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\database-access-in-c-console-app-garnold-crump-student\\projects\\accountsmanager\\accountsmanager\\wwwroot\\gamebuilds\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\wwwroot\\gamebuilds\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\database-access-in-c-console-app-garnold-crump-student\\projects\\accountsmanager\\accountsmanager\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\database-access-in-c-console-app-garnold-crump-student\\projects\\accountsmanager\\accountsmanager\\data\\sql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\data\\sql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\database-access-in-c-console-app-garnold-crump-student\\projects\\accountsmanager\\accountsmanager\\accountsmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\accountsmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\accountsmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\database-access-in-c-console-app-garnold-crump-student\\projects\\accountsmanager\\accountsmanager\\models\\games.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\models\\games.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\models\\games.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\database-access-in-c-console-app-garnold-crump-student\\projects\\accountsmanager\\accountsmanager\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\data\\sql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\data\\sql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|c:\\users\\gacr846\\documents\\github\\studentsgamepost\\accountsmanager\\accountsmanager\\wwwroot\\gamebuilds\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{1C20F58D-97FD-4E64-B063-20B1A1624D7B}|AccountsManager\\AccountsManager.csproj|solutionrelative:accountsmanager\\wwwroot\\gamebuilds\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +49,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,24 +57,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\appsettings.json",
-              "RelativeDocumentMoniker": "AccountsManager\\appsettings.json",
-              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\appsettings.json",
-              "RelativeToolTip": "AccountsManager\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-19T14:34:16.966Z",
-              "EditorCaption": ""
+              "DocumentIndex": 8,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAGQbAAAAAAAAAAAAABEAAAB+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-12-05T15:40:54.214Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\appsettings.json",
+              "RelativeDocumentMoniker": "AccountsManager\\appsettings.json",
+              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\appsettings.json",
+              "RelativeToolTip": "AccountsManager\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-19T14:34:16.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\wwwroot\\GameBuilds\\.gitignore",
+              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\wwwroot\\GameBuilds\\.gitignore",
               "RelativeDocumentMoniker": "AccountsManager\\wwwroot\\GameBuilds\\.gitignore",
-              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\wwwroot\\GameBuilds\\.gitignore",
+              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\wwwroot\\GameBuilds\\.gitignore",
               "RelativeToolTip": "AccountsManager\\wwwroot\\GameBuilds\\.gitignore",
               "ViewState": "AgIAAOEAAAAAAAAAAAAAAOEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -79,50 +93,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Program.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Program.cs",
-              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Program.cs",
+              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Program.cs",
               "RelativeToolTip": "AccountsManager\\Program.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAkwIAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAABgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:31:01.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T14:31:01.182Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "gameController.cs",
-              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Controllers\\gameController.cs",
+              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Controllers\\gameController.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Controllers\\gameController.cs",
-              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Controllers\\gameController.cs",
+              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Controllers\\gameController.cs",
               "RelativeToolTip": "AccountsManager\\Controllers\\gameController.cs",
-              "ViewState": "AgIAACcBAAAAAAAAAAAmwD8BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAwwAMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:30:34.891Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T14:30:34.891Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Controllers\\UserController.cs",
               "RelativeToolTip": "AccountsManager\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAuwHoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwD0AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:30:09.521Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T14:30:09.521Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Sql.cs",
-              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Data\\Sql.cs",
+              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Data\\Sql.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Data\\Sql.cs",
-              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Data\\Sql.cs",
+              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Data\\Sql.cs",
               "RelativeToolTip": "AccountsManager\\Data\\Sql.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -130,36 +141,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "games.cs",
-              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Models\\games.cs",
+              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Models\\games.cs",
               "RelativeDocumentMoniker": "AccountsManager\\Models\\games.cs",
-              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Models\\games.cs",
+              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Models\\games.cs",
               "RelativeToolTip": "AccountsManager\\Models\\games.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:28:25.863Z",
+              "WhenOpened": "2025-11-19T14:28:25.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "AccountsManager\\Models\\Users.cs",
+              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\Models\\Users.cs",
+              "RelativeToolTip": "AccountsManager\\Models\\Users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T14:28:12.788Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Models\\Users.cs",
-              "RelativeDocumentMoniker": "AccountsManager\\Models\\Users.cs",
-              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\Models\\Users.cs",
-              "RelativeToolTip": "AccountsManager\\Models\\Users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T14:28:12.788Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "AccountsManager.csproj",
-              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
+              "DocumentMoniker": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
               "RelativeDocumentMoniker": "AccountsManager\\AccountsManager.csproj",
-              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\database-access-in-c-console-app-Garnold-Crump-Student\\Projects\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
+              "ToolTip": "C:\\Users\\gacr846\\Documents\\GitHub\\StudentsGamePost\\AccountsManager\\AccountsManager\\AccountsManager.csproj",
               "RelativeToolTip": "AccountsManager\\AccountsManager.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",

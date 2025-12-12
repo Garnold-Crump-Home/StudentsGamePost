@@ -6,43 +6,28 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.IO;
 
-// -------------------------------
-// Folder for game builds
-// -------------------------------
+
 var gameBuildsPath = Path.Combine(Directory.GetCurrentDirectory(), "GameBuilds");
 if (!Directory.Exists(gameBuildsPath))
     Directory.CreateDirectory(gameBuildsPath);
 
-// -------------------------------
-// Build WebApplication
-// -------------------------------
+
 var builder = WebApplication.CreateBuilder(args);
 
-// -------------------------------
-// Configure Kestrel and ports
-// -------------------------------
-// Use HTTP port 5000 in development (Codespaces-friendly)
-builder.WebHost.ConfigureKestrel(options =>
-{
-    options.Limits.MaxRequestBodySize = 500_000_000; // 500 MB
-    options.ListenAnyIP(5000); // HTTP for dev
-    // Uncomment below for production HTTPS
-    // options.ListenAnyIP(7239, listenOptions => listenOptions.UseHttps());
-});
 
-// -------------------------------
-// Services
-// -------------------------------
 builder.Services.AddControllers();
 builder.Services.AddScoped<Sql>();
 
-// Limit form body for large file uploads
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.Limits.MaxRequestBodySize = 500_000_000;
+});
 builder.Services.Configure<FormOptions>(options =>
 {
-    options.MultipartBodyLengthLimit = 500_000_000; // 500 MB
+    options.MultipartBodyLengthLimit = 500_000_000;
 });
 
-// CORS
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -53,28 +38,27 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Swagger
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "AccountsManager API", Version = "v1" });
-    c.OperationFilter<SwaggerFileUploadOperationFilter>(); // <-- Add our custom filter
+    c.OperationFilter<SwaggerFileUploadOperationFilter>();
 });
 
-// -------------------------------
-// Build app
-// -------------------------------
+
 var app = builder.Build();
 
-// Development tools
+
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseHttpsRedirection();
 }
 
-// Static files for Unity builds
+
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
@@ -92,28 +76,19 @@ app.UseStaticFiles(new StaticFileOptions
     )
 });
 
-// Middleware
+
 app.UseCors("AllowAll");
 app.UseRouting();
 app.UseAuthorization();
 
-// Only redirect to HTTPS in production
-if (!app.Environment.IsDevelopment())
-{
-    app.UseHttpsRedirection();
-}
 
-// Map controllers
 app.MapControllers();
 
-// -------------------------------
-// Run
-// -------------------------------
+
 app.Run();
 
-// -------------------------------
-// Swagger OperationFilter for IFormFile uploads
-// -------------------------------
+
+
 public class SwaggerFileUploadOperationFilter : IOperationFilter
 {
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
